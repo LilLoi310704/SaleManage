@@ -1,0 +1,30 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Trang Chu</title>
+    <th:block th:replace="base :: styles"></th:block>
+</head>
+<body>
+    <div th:replace="base :: header"></div>
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Tên sản phẩm</th>
+            <th>Gía sản phẩm</th>
+            <th></th>
+        </tr>
+        <tr th:eacg="p: ${products}">
+            <td>
+                <img th:src="${p.image}" width="300"/>
+                
+            </td>
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.price}"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div th:replace="base :: footer"></div>
+</body>
+</html>
